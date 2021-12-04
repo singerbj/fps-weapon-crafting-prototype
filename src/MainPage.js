@@ -28,11 +28,17 @@ const useStyles = makeStyles((theme) => {
         leftBox: {
             margin: theme.spacing(2),
             width: `calc((100% - 10em) - ${theme.spacing(4)})`,
+            [theme.breakpoints.down('md')]: {
+                width: `calc(100% - ${theme.spacing(4)})`,
+            },
             display: 'inline-block',
         },
         rightBox: {
             margin: theme.spacing(2),
             width: `calc(10em - ${theme.spacing(4)})`,
+            [theme.breakpoints.down('md')]: {
+                width: `calc(100% - ${theme.spacing(4)})`,
+            },
             display: 'inline-block',
         },
         input: {
