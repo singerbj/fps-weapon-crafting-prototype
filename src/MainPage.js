@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 import { makeStyles } from '@mui/styles';
-import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -90,49 +89,45 @@ const App = () => {
     };
 
     return (
-        <Grid container spacing={0} align="center" justify="center" direction="column" className={classes.grid}>
-            <Grid item>
-                <Paper className={classes.paper}>
-                    <Button
-                        className={classes.button}
-                        size="large"
-                        color="primary"
-                        variant="contained"
-                        onClick={() => {
-                            randomizeBaseStats();
-                        }}
-                    >
-                        Randomize Base Stats
-                    </Button>
-                    <Button
-                        className={classes.button}
-                        size="large"
-                        color="primary"
-                        variant="contained"
-                        onClick={() => {
-                            randomizeElements();
-                        }}
-                    >
-                        Randomize Elements
-                    </Button>
-                </Paper>
-            </Grid>
-            <Grid item>
-                <Paper className={classes.paper}>
-                    <div className={classes.leftBox}>
-                        <StatsView elements={state.elements} baseStats={state.baseStats} />
-                    </div>
-                    <div className={classes.rightBox}>
-                        <TextField className={classes.input} type="number" name="fire" label="fire" value={state.elements.fire} onChange={onElementChange} />
-                        <TextField className={classes.input} type="number" name="ice" label="ice" value={state.elements.ice} onChange={onElementChange} />
-                        <TextField className={classes.input} type="number" name="earth" label="earth" value={state.elements.earth} onChange={onElementChange} />
-                        <TextField className={classes.input} type="number" name="fusion" label="fusion" value={state.elements.fusion} onChange={onElementChange} />
-                        <TextField className={classes.input} type="number" name="poison" label="poison" value={state.elements.poison} onChange={onElementChange} />
-                        <TextField className={classes.input} type="number" name="wind" label="wind" value={state.elements.wind} onChange={onElementChange} />
-                    </div>
-                </Paper>
-            </Grid>
-        </Grid>
+        <>
+            <Paper className={classes.paper}>
+                <Button
+                    className={classes.button}
+                    size="large"
+                    color="primary"
+                    variant="contained"
+                    onClick={() => {
+                        randomizeBaseStats();
+                    }}
+                >
+                    Randomize Base Stats
+                </Button>
+                <Button
+                    className={classes.button}
+                    size="large"
+                    color="primary"
+                    variant="contained"
+                    onClick={() => {
+                        randomizeElements();
+                    }}
+                >
+                    Randomize Elements
+                </Button>
+            </Paper>
+            <Paper className={classes.paper}>
+                <div className={classes.leftBox}>
+                    <StatsView elements={state.elements} baseStats={state.baseStats} />
+                </div>
+                <div className={classes.rightBox}>
+                    <TextField className={classes.input} type="number" name="fire" label="fire" value={state.elements.fire} onChange={onElementChange} />
+                    <TextField className={classes.input} type="number" name="ice" label="ice" value={state.elements.ice} onChange={onElementChange} />
+                    <TextField className={classes.input} type="number" name="earth" label="earth" value={state.elements.earth} onChange={onElementChange} />
+                    <TextField className={classes.input} type="number" name="fusion" label="fusion" value={state.elements.fusion} onChange={onElementChange} />
+                    <TextField className={classes.input} type="number" name="poison" label="poison" value={state.elements.poison} onChange={onElementChange} />
+                    <TextField className={classes.input} type="number" name="wind" label="wind" value={state.elements.wind} onChange={onElementChange} />
+                </div>
+            </Paper>
+        </>
     );
 };
 
